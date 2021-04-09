@@ -2,7 +2,7 @@
 SoLoud wrapper for Odin Progamming Language.
 Not fully tested yet.
 
-# Simple Example:
+Simple Example:
 ```
 package main
 
