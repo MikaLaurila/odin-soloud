@@ -13,7 +13,7 @@ foreign lib {
     @(link_name="Soloud_init") soloud_init :: proc(soloud: Soloud) -> i32 ---;
     @(link_name="Soloud_initEx") soloud_init_ex :: proc(soloud: Soloud, flags: u32, backend: u32, sample_rate: u32, buffersize: u32, channels: u32) -> i32 ---;
     @(link_name="Soloud_deinit") soloud_deinit :: proc(soloud: Soloud) ---;
-    @(link_name="Soloud_getVersion") soloud_get_version :: proc(soloud: Soloud) -> i32 ---;
+    @(link_name="Soloud_getVersion") soloud_get_version :: proc(soloud: Soloud) -> u32 ---;
     @(link_name="Soloud_getErrorString") soloud_get_error_string :: proc(soloud: Soloud, errorCode: i32) -> cstring ---;
     @(link_name="Soloud_getBackendId") soloud_get_backend_id :: proc(soloud: Soloud) -> u32 ---;
     @(link_name="Soloud_getBackendString") soloud_get_backend_string :: proc(soloud: Soloud) -> cstring ---;
@@ -22,7 +22,7 @@ foreign lib {
     @(link_name="Soloud_getBackendBufferSize") soloud_get_backend_buffer_size :: proc(soloud: Soloud) -> u32 ---;
     @(link_name="Soloud_setSpeakerPosition") soloud_set_speaker_position :: proc(soloud: Soloud, channel: u32, x: f32, y: f32, z: f32) -> i32 ---;
     @(link_name="Soloud_getSpeakerPosition") soloud_get_speaker_position :: proc(soloud: Soloud, channel: u32, x: ^f32, y: ^f32, z: ^f32) -> i32 ---;
-    @(link_name="Soloud_play") soloud_play :: proc(soloud: Soloud, sound: Audio_Source) -> i32 ---;
+    @(link_name="Soloud_play") soloud_play :: proc(soloud: Soloud, sound: Audio_Source) -> u32 ---;
     @(link_name="Soloud_playEx") soloud_play_ex :: proc(soloud: Soloud, sound: Audio_Source, volume: f32 /* = -1.0f */, pan: f32 /* = 0.0f */, paused: i32 /* = 0 */, bus: u32 /* = 0 */) -> u32 ---;
     @(link_name="Soloud_playClocked") soloud_play_clocked :: proc(soloud: Soloud, sound_time: f64, sound: Audio_Source) -> u32 ---;
     @(link_name="Soloud_playClockedEx") soloud_play_clocked_ex :: proc(soloud: Soloud, sound_time: f64, sound: Audio_Source, volume: f32 /* = -1.0f */, pan: f32 /* = 0.0f */, bus: u32 /* = 0 */) -> u32 ---;
@@ -539,37 +539,37 @@ foreign lib {
 }
 
 
-Aligned_Float_Buffer ::  rawptr;
-Tiny_Aligned_Float_Buffer ::  rawptr;
-Soloud ::  rawptr;
-Audio_Collider ::  rawptr;
-Audio_Attenuator ::  rawptr;
-Audio_Source ::  rawptr;
-Bassboost_Filter ::  rawptr;
-Biquad_Resonant_Filter ::  rawptr;
-Bus ::  rawptr;
-DC_Removal_Filter ::  rawptr;
-Echo_Filter ::  rawptr;
-Fader ::  rawptr;
-FFT_Filter ::  rawptr;
-Filter ::  rawptr;
-Flanger_Filter ::  rawptr;
-Freeverb_Filter ::  rawptr;
-Lofi_Filter ::  rawptr;
-Monotone ::  rawptr;
-Noise ::  rawptr;
-Openmpt ::  rawptr;
-Queue ::  rawptr;
-Robotize_Filter ::  rawptr;
-Sfxr ::  rawptr;
-Speech ::  rawptr;
-Ted_Sid ::  rawptr;
-Vic ::  rawptr;
-Vizsn ::  rawptr;
-Wav ::  rawptr;
-Wave_Shaper_Filter ::  rawptr;
-Wav_Stream ::  rawptr;
-File ::  rawptr;
+Aligned_Float_Buffer :: rawptr;
+Tiny_Aligned_Float_Buffer :: rawptr;
+Soloud :: rawptr;
+Audio_Collider :: rawptr;
+Audio_Attenuator :: rawptr;
+Audio_Source :: rawptr;
+Bassboost_Filter :: rawptr;
+Biquad_Resonant_Filter :: rawptr;
+Bus :: rawptr;
+DC_Removal_Filter :: rawptr;
+Echo_Filter :: rawptr;
+Fader :: rawptr;
+FFT_Filter :: rawptr;
+Filter :: rawptr;
+Flanger_Filter :: rawptr;
+Freeverb_Filter :: rawptr;
+Lofi_Filter :: rawptr;
+Monotone :: rawptr;
+Noise :: rawptr;
+Openmpt :: rawptr;
+Queue :: rawptr;
+Robotize_Filter :: rawptr;
+Sfxr :: rawptr;
+Speech :: rawptr;
+Ted_Sid :: rawptr;
+Vic :: rawptr;
+Vizsn :: rawptr;
+Wav :: rawptr;
+Wave_Shaper_Filter :: rawptr;
+Wav_Stream :: rawptr;
+File :: rawptr;
 
 
 SOLOUD_AUTO :: 0;
