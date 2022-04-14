@@ -6,24 +6,24 @@ Simple Example:
 ```
 package main
 
-import sol "shared:soloud"
+import "shared:soloud"
 
 main :: proc() {
-    solcore := sol.soloud_create();
-    speech := sol.speech_create();
+    core := soloud.create();
+    speech := soloud.speech_create();
     
-    sol.speech_set_text(speech, "hello world");
+    soloud.speech_set_text(speech, "hello world");
 
-    sol.soloud_init(solcore);
+    soloud.init(core);
     
-    sol.soloud_set_global_volume(solcore, 4);
-    sol.soloud_play(solcore, speech);
+    soloud.set_global_volume(core, 4);
+    soloud.play(core, speech);
 
-    for sol.soloud_get_active_voice_count(solcore) > 0 {}
+    for soloud.get_active_voice_count(core) > 0 {}
 
-    sol.soloud_deinit(solcore);
+    soloud.deinit(core);
     
-    sol.speech_destroy(speech);
-    sol.soloud_destroy(solcore);
+    soloud.speech_destroy(speech);
+    soloud.destroy(core);
 }
 ```
